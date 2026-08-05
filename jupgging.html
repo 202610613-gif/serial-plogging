@@ -24,7 +24,7 @@
 <div class="overlay" id="voteModal"><div class="modal"><button class="x" data-close="voteModal">×</button><p class="muted">참가 신청 완료!</p><h2>대표자 투표 🗳️</h2><div class="guide-tip">1. 모임 참가 신청 완료<br>2. 참가자 수와 이름 입력<br>3. 대표자 1명 투표</div><p>이번 활동을 함께할 사람들의 정보를 적고, 대표자를 뽑아줘!</p><div class="vote-setup"><label for="voteParticipantCount">참가자 수</label><input id="voteParticipantCount" type="number" min="2" max="8" value="3"><label for="voteParticipantNames">참가자 이름</label><textarea id="voteParticipantNames" placeholder="이름을 쉼표 또는 줄바꿈으로 나눠 적어줘&#10;예: 지민, 민수, 서연"></textarea><button class="btn" id="voteMakeCandidates" style="width:100%;margin-top:12px">투표 후보 만들기</button></div><div class="vote-list" id="voteCandidates"></div><button class="btn secondary" id="voteFinish" style="width:100%;margin-top:12px;display:none">투표 완료 · 인증 방법 보기</button></div></div>
 <div class="overlay" id="flowModal"><div class="modal"><button class="x" data-close="flowModal">×</button><p class="muted">씨리얼 인증 안내</p><div class="guide-warning">👀 안 보고 닫으면 혜택 놓칠 수도 있어요!</div><h2 id="flowTitle">인증 방법</h2><div class="guide-card" id="guideCard"></div><div class="guide-nav"><button class="btn ghost" id="guidePrev">이전</button><span class="guide-page" id="guidePage">1 / 4</span><button class="btn" id="guideNext">다음</button></div><button id="openCamera" hidden type="button"></button></div></div>
 
-<div class="overlay" id="activityModal"><div class="modal"><button class="x" data-close="activityModal">×</button><h2 id="activityTitle">활동 인증</h2><div class="notice">GPS는 <b>HTTPS 주소 또는 localhost</b>에서 권한을 허용해야 해요. 파일로 열었을 때 권한창이 안 뜨면 <b>씨리얼_카메라실행.bat</b>을 더블클릭해줘.</div><video class="camera" id="camera" autoplay playsinline></video><p id="cameraMessage">카메라 인증은 선택이에요. GPS 활동을 시작하려면 아래 버튼을 눌러주세요.</p><div class="actions"><button class="btn" id="startCamera">카메라 켜기 (선택)</button><button class="btn secondary" id="completeStart">GPS 활동 시작하기</button><button class="btn secondary" id="completeEnd">종료 인증</button><button class="btn ghost" id="cancelActivity">긴급 취소</button></div><div class="stats"><div class="stat"><b id="elapsed">00:00</b>운동 시간</div><div class="stat"><b id="distance">0.0km</b>이동 거리</div><div class="stat"><b id="calories">0kcal</b>예상 열량</div></div><p class="gps-status" id="gpsStatus">📍 GPS 활동 시작을 누르면 실제 이동거리를 기록해요.</p><button class="btn ghost" id="confirmParticipation" style="width:100%;margin-top:14px">실제로 참여했습니다</button></div></div>
+<div class="overlay" id="activityModal"><div class="modal"><button class="x" data-close="activityModal">×</button><h2 id="activityTitle">활동 인증</h2><div class="notice" id="gpsEnvironmentNotice">이 파일을 컴퓨터에서 직접 열면 GPS가 제한될 수 있어요. 공개된 씨리얼 사이트로 접속해주세요.</div><video class="camera" id="camera" autoplay playsinline></video><p id="cameraMessage">카메라 인증은 선택이에요. GPS 활동을 시작하려면 아래 버튼을 눌러주세요.</p><div class="actions"><button class="btn" id="startCamera">카메라 켜기 (선택)</button><button class="btn secondary" id="completeStart">GPS 활동 시작하기</button><button class="btn secondary" id="completeEnd">종료 인증</button><button class="btn ghost" id="cancelActivity">긴급 취소</button></div><div class="stats"><div class="stat"><b id="elapsed">00:00</b>운동 시간</div><div class="stat"><b id="distance">0.0km</b>이동 거리</div><div class="stat"><b id="calories">0kcal</b>예상 열량</div></div><p class="gps-status" id="gpsStatus">📍 GPS 활동 시작을 누르면 실제 이동거리를 기록해요.</p><button class="btn ghost" id="confirmParticipation" style="width:100%;margin-top:14px">실제로 참여했습니다</button></div></div>
 
 <div class="overlay" id="mypageModal"><div class="modal"><button class="x" data-close="mypageModal">×</button><p class="muted">MY CEREAL</p><h2>내 바다 갓생 현황 🌊</h2><div class="mypage-intro">지금은 <b>초보자</b> 단계야! 첫 활동을 완료하면 바다 새싹으로 레벨업해 ✨</div><div class="level-line"><div class="level active"><b>🐣 초보자</b><span>첫 걸음을 준비 중이에요</span></div><div class="level"><b>🌱 바다 새싹</b><span>스탬프 1개 달성</span></div><div class="level"><b>🧤 씨리얼 지킴이</b><span>스탬프 3개 달성</span></div><div class="level"><b>🦸 바다 히어로</b><span>스탬프 5개 달성</span></div></div><div class="stats"><div class="stat"><b id="stampCount">0/5</b>스탬프 현황</div><div class="stat"><b id="couponCount">0장</b>할인권</div><div class="stat"><b id="pointCount">0P</b>포인트</div></div><h3>할인권 적용 가능 가게</h3><div class="shop"><span>🌊 광안리 바다식당</span><b>10%</b></div><div class="shop"><span>🍜 해운대 파도국수</span><b>10%</b></div><div class="shop"><span>🍱 송정 모래밭식당</span><b>10%</b></div></div></div>
 <div class="overlay" id="rewardModal"><div class="modal reward"><button class="x" data-close="rewardModal">×</button><p>🎉 참여 인증 완료!</p><h2>스탬프가 적립됐어요</h2><div class="reward-ticket"><small>씨리얼 참여 혜택</small><strong>쿠폰 지급 완료</strong><span>지역 음식점 할인권을 마이페이지에서 확인해봐요!</span></div><button class="btn" data-close="rewardModal">확인</button></div></div>
@@ -54,26 +54,37 @@ function resetActivity(){
   document.getElementById('gpsStatus').textContent='📍 GPS 활동 시작을 누르면 실제 이동거리를 기록해요.';
   document.getElementById('cameraMessage').textContent='카메라 인증은 선택이에요. GPS 활동을 시작하려면 아래 버튼을 눌러주세요.';
   const startButton=document.getElementById('startCamera');startButton.disabled=false;startButton.textContent='카메라 켜기 (선택)';
+  const gpsStartButton=document.getElementById('completeStart');gpsStartButton.disabled=false;gpsStartButton.textContent='GPS 활동 시작하기';
 }
 
 function stopLocationTracking(){if(geoWatchId!==null){navigator.geolocation?.clearWatch(geoWatchId);geoWatchId=null}}
 function setGpsStatus(text){document.getElementById('gpsStatus').textContent=text}
 function haversineMeters(from,to){const rad=value=>value*Math.PI/180;const earth=6371000;const dLat=rad(to.latitude-from.latitude);const dLng=rad(to.longitude-from.longitude);const a=Math.sin(dLat/2)**2+Math.cos(rad(from.latitude))*Math.cos(rad(to.latitude))*Math.sin(dLng/2)**2;return 2*earth*Math.asin(Math.sqrt(a))}
 function updateActivityMetrics(){const km=totalMeters/1000;document.getElementById('distance').textContent=`${km.toFixed(2)}km`;document.getElementById('calories').textContent=`${Math.round(km*50)}kcal`}
-function startLocationTracking(){
-  if(!navigator.geolocation){setGpsStatus('📍 이 기기에서는 GPS를 사용할 수 없어요.');return}
-  if(!window.isSecureContext){setGpsStatus('📍 HTTPS 주소에서 GPS를 사용할 수 있어요.');return}
-  setGpsStatus('📍 GPS 연결 중… 위치 권한을 허용해주세요.');
-  geoWatchId=navigator.geolocation.watchPosition(position=>{
+function handleGpsPosition(position){
     const current={latitude:position.coords.latitude,longitude:position.coords.longitude};const accuracy=position.coords.accuracy;
     if(!Number.isFinite(current.latitude)||!Number.isFinite(current.longitude)||accuracy>100){setGpsStatus('📍 GPS 정확도를 높이는 중이에요. 잠시만 기다려주세요.');return}
-    if(lastPosition){const segment=haversineMeters(lastPosition,current);if(segment>=3&&segment<=150){totalMeters+=segment;updateActivityMetrics()}}
+    if(lastPosition){const segment=haversineMeters(lastPosition,current);if(segment>=2&&segment<=150){totalMeters+=segment;updateActivityMetrics()}}
     lastPosition=current;setGpsStatus(`📍 GPS 기록 중 · 정확도 ±${Math.round(accuracy)}m`);
-  },error=>{
+}
+function handleGpsError(error){
     const message=error.code===1?'GPS 권한이 필요해요. 브라우저 설정에서 위치를 허용해주세요.':error.code===2?'현재 위치를 찾지 못했어요. 야외에서 다시 시도해주세요.':'GPS 연결 시간이 초과됐어요. 다시 시도해주세요.';
     setGpsStatus(`📍 ${message}`);if(error.code===1)stopLocationTracking();
-  },{enableHighAccuracy:true,maximumAge:3000,timeout:15000});
 }
+function startLocationTracking(){
+  if(!navigator.geolocation){setGpsStatus('📍 이 기기에서는 GPS를 사용할 수 없어요.');return Promise.resolve(false)}
+  if(!window.isSecureContext){setGpsStatus('📍 HTTPS 주소에서 GPS를 사용할 수 있어요.');return Promise.resolve(false)}
+  setGpsStatus('📍 위치 권한을 요청하고 있어요. 화면의 허용을 눌러주세요.');
+  const options={enableHighAccuracy:true,maximumAge:0,timeout:20000};
+  return new Promise(resolve=>navigator.geolocation.getCurrentPosition(position=>{
+    handleGpsPosition(position);
+    geoWatchId=navigator.geolocation.watchPosition(handleGpsPosition,handleGpsError,{enableHighAccuracy:true,maximumAge:2000,timeout:20000});
+    resolve(true);
+  },error=>{handleGpsError(error);resolve(false)},options));
+}
+
+const gpsEnvironmentNotice=document.getElementById('gpsEnvironmentNotice');
+if(gpsEnvironmentNotice)gpsEnvironmentNotice.style.display=location.protocol==='file:'?'block':'none';
 
 document.querySelectorAll('[data-close]').forEach(button=>button.addEventListener('click',()=>closeModal(button.dataset.close)));
 document.querySelectorAll('.overlay').forEach(overlay=>overlay.addEventListener('click',event=>{if(event.target===overlay)closeModal(overlay.id)}));
@@ -106,7 +117,7 @@ document.getElementById('voteFinish').addEventListener('click',()=>{
 
 document.getElementById('startCamera').addEventListener('click',async()=>{const button=document.getElementById('startCamera');button.disabled=true;button.textContent='카메라 연결 중...';try{if(!navigator.mediaDevices?.getUserMedia)throw new Error('secure');stream=await navigator.mediaDevices.getUserMedia({video:true,audio:false});const camera=document.getElementById('camera');camera.style.display='block';camera.srcObject=stream;await camera.play();document.getElementById('cameraMessage').textContent='카메라가 켜졌어요. 준비가 되면 GPS 활동 시작하기를 눌러주세요.';button.textContent='카메라 연결 완료'}catch(error){button.disabled=false;button.textContent='카메라 켜기 (선택)';document.getElementById('cameraMessage').textContent='카메라를 열 수 없어요. 그래도 GPS 활동 시작하기는 사용할 수 있어요.'}});
 
-document.getElementById('completeStart').addEventListener('click',()=>{if(startAt){toast('이미 GPS 활동을 기록 중이에요!');return}if(stream){stream.getTracks().forEach(track=>track.stop());stream=null}document.getElementById('camera').srcObject=null;document.getElementById('camera').style.display='none';startAt=Date.now();clearInterval(timer);timer=setInterval(updateStats,500);startLocationTracking();document.getElementById('cameraMessage').textContent='GPS 활동을 시작했어요! 위치 권한을 허용하면 실제 이동거리가 기록돼요.';toast('GPS 활동 기록을 시작했어요.')});
+document.getElementById('completeStart').addEventListener('click',async()=>{if(startAt){toast('이미 GPS 활동을 기록 중이에요!');return}const button=document.getElementById('completeStart');button.disabled=true;button.textContent='GPS 권한 확인 중…';const gpsReady=await startLocationTracking();if(!gpsReady){button.disabled=false;button.textContent='GPS 활동 시작하기';toast('위치 권한을 허용한 뒤 다시 눌러주세요.');return}if(stream){stream.getTracks().forEach(track=>track.stop());stream=null}document.getElementById('camera').srcObject=null;document.getElementById('camera').style.display='none';startAt=Date.now();clearInterval(timer);timer=setInterval(updateStats,500);button.textContent='GPS 기록 중';document.getElementById('cameraMessage').textContent='GPS 활동을 시작했어요! 이동한 경로가 실제 거리로 기록돼요.';toast('GPS 활동 기록을 시작했어요.')});
 function updateStats(){if(!startAt)return;const sec=Math.floor((Date.now()-startAt)/1000);document.getElementById('elapsed').textContent=`${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;updateActivityMetrics()}
 document.getElementById('completeEnd').addEventListener('click',()=>{if(!startAt){toast('먼저 시작 인증을 완료해주세요.');return}const sec=(Date.now()-startAt)/1000;if(sec<3600){toast(`목표 1시간을 채워야 적립돼요. 현재 ${Math.floor(sec/60)}분`);return}clearInterval(timer);stopLocationTracking();endVerified=true;setGpsStatus(`📍 GPS 기록 완료 · 실제 이동거리 ${document.getElementById('distance').textContent}`);document.getElementById('cameraMessage').textContent='종료 인증 완료. 마지막 참여 확인을 눌러주세요.';toast('종료 인증이 완료됐어요.')});
 document.getElementById('confirmParticipation').addEventListener('click',()=>{if(!startAt||!endVerified){toast('시작 인증과 종료 인증을 모두 완료한 뒤 받을 수 있어!');return}if(activityRewarded){toast('이번 활동의 스탬프는 이미 적립됐어! 😊');return}activityRewarded=true;document.getElementById('confirmParticipation').disabled=true;stamps=Math.min(5,stamps+1);points+=100;document.getElementById('stampCount').textContent=`${stamps}/5`;document.getElementById('pointCount').textContent=`${points}P`;if(stamps===5)document.getElementById('couponCount').textContent='1장';toast(`스탬프 적립 완료! 현재 ${stamps}/5`)});
