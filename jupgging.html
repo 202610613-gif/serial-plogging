@@ -1,0 +1,190 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>씨리얼</title>
+<style>
+*{box-sizing:border-box}html{scroll-behavior:smooth}body{margin:0;background:#fffaf2;color:#173f34;font-family:Arial,"Noto Sans KR",sans-serif}button{font:inherit}.nav{height:80px;padding:0 7%;display:flex;align-items:center;justify-content:space-between;background:#fffaf2}.brand{font-size:26px;font-weight:900}.nav-right{display:flex;gap:12px;align-items:center}.mini{font-size:12px}.btn{border:0;border-radius:999px;padding:13px 20px;background:#f47645;color:#fff;font-weight:800;cursor:pointer}.btn:hover{filter:brightness(.96)}.btn.secondary{background:#173f34}.btn.ghost{background:#e7f2e6;color:#173f34}.hero{padding:58px 9%;background:#dff2dc}.hero p{margin:0 0 12px}.activity-time{display:flex;align-items:center;gap:16px;margin:8px 0 20px}.activity-time strong{font-size:clamp(42px,6vw,68px);line-height:1;letter-spacing:-3px}.activity-time span{display:inline-block;background:#fffaf2;color:#e86f40;border-radius:999px;padding:10px 16px;font-weight:800}.hero-message{font-size:18px!important;font-weight:700;color:#285a4d}.section{padding:58px 9%}.section h2{font-size:32px;margin:0 0 8px}.muted{color:#688077}.filters{display:flex;gap:8px;margin:22px 0;flex-wrap:wrap}.chip{border:1px solid #bdd0c0;border-radius:999px;padding:9px 14px;background:#fff;color:#173f34}.grid{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:16px}.card{background:#fff;border:1px solid #dde7dc;border-radius:18px;padding:20px}.card small{color:#f47645;font-weight:800}.card h3{margin:16px 0 8px}.card p{font-size:13px;color:#688077}.card .btn{width:100%;margin-top:8px}.schedule{background:#fff1da;text-align:center;padding:38px 9%;line-height:2}.overlay{position:fixed;inset:0;background:#173f34d9;z-index:20;display:none;align-items:center;justify-content:center;padding:16px;overflow:auto}.overlay.open{display:flex}.modal{position:relative;background:#fffaf2;border-radius:24px;padding:28px;width:min(620px,100%);max-height:92vh;overflow:auto;box-shadow:0 20px 60px #102d2444}.x{position:absolute;right:14px;top:12px;width:40px;height:40px;border:0;border-radius:50%;background:#e7f2e6;color:#173f34;font-size:25px;cursor:pointer}.event{text-align:center}.event-badge{display:inline-block;background:#f47645;color:#fff;border-radius:999px;padding:12px 24px;font-size:20px;font-weight:900}.stamps{display:flex;justify-content:center;gap:8px;margin:24px 0}.stamp{width:56px;height:56px;border-radius:50%;display:grid;place-items:center;background:#e7f2e6;color:#62806e;font-weight:900}.stamp.filled{background:#ffd079;color:#88451f}.meaning{background:#e7f2e6;border-radius:14px;padding:14px;line-height:1.5}.steps{display:grid;grid-template-columns:repeat(2,1fr);gap:10px;margin:18px 0}.step{background:#fff;border:1px solid #dde7dc;border-radius:15px;padding:15px;line-height:1.45}.step b{display:block;color:#f47645;margin-bottom:5px}.camera{width:100%;height:260px;background:#173f34;border-radius:15px;object-fit:cover;margin:12px 0}.notice{background:#fff0d5;color:#8c562f;border-radius:13px;padding:13px;line-height:1.5;font-size:13px}.actions{display:flex;gap:9px;flex-wrap:wrap;margin:14px 0}.actions .btn{flex:1;min-width:155px}.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:9px}.stat{background:#e7f2e6;border-radius:13px;padding:14px;text-align:center;font-size:12px}.stat b{display:block;font-size:22px}.gps-status{margin:12px 0 0;text-align:center;color:#527267;font-size:13px;font-weight:800}.shop{display:flex;justify-content:space-between;background:#fff;border:1px solid #dde7dc;border-radius:12px;padding:13px;margin:8px 0}.toast{position:fixed;left:50%;bottom:25px;transform:translateX(-50%);z-index:40;background:#173f34;color:#fff;border-radius:999px;padding:14px 20px;display:none}.character{width:50px;height:50px;object-fit:cover;border-radius:13px}.confetti{position:fixed;top:-30px;z-index:30;pointer-events:none;animation:fall 3s linear forwards}@keyframes fall{to{transform:translateY(105vh) rotate(620deg);opacity:0}}@media(max-width:760px){.grid{grid-template-columns:1fr}.steps{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.nav{padding:0 4%}.mini{display:none}.hero{padding:48px 6%}.section{padding:48px 6%}.activity-time{display:block}.activity-time strong{display:block;margin-bottom:12px}.modal{padding:24px 18px}.camera{height:220px}}
+</style>
+<style>
+.guide-card{background:#fff;border:1px solid #dce8dc;border-radius:20px;padding:28px;min-height:245px;display:grid;align-content:center;text-align:center}.guide-emoji{font-size:54px;margin-bottom:10px}.guide-card h3{font-size:24px;margin:5px 0 12px}.guide-card p{margin:0;line-height:1.65;color:#527267}.guide-tip{margin-top:16px;background:#fff0d5;color:#8c562f;border-radius:12px;padding:10px;font-size:13px;font-weight:700}.guide-nav{display:flex;justify-content:space-between;align-items:center;gap:10px;margin-top:16px}.guide-nav button{min-width:100px}.guide-page{font-size:13px;color:#688077;font-weight:800}.guide-warning{display:inline-block;margin:0 0 10px;background:#fff0d5;color:#a85730;border-radius:999px;padding:7px 12px;font-size:12px;font-weight:800}.vote-list{display:grid;gap:8px;margin-top:16px}.vote-option{border:1px solid #c9dfcc;background:#f8fcf7;color:#173f34;border-radius:12px;padding:11px;cursor:pointer;font-weight:800}.vote-option:hover{background:#e7f2e6}.vote-option.selected{background:#173f34;color:#fff;border-color:#173f34}.vote-setup{text-align:left;margin-top:16px}.vote-setup label{display:block;font-size:12px;font-weight:800;margin:10px 0 5px}.vote-setup input,.vote-setup textarea{width:100%;border:1px solid #c9dfcc;border-radius:10px;padding:10px;background:#f8fcf7;font:inherit}.vote-setup textarea{resize:vertical;min-height:72px}.serial-tease{border:0;background:linear-gradient(135deg,#173f34,#2d6b5b);color:#fff;border-radius:18px;padding:18px 24px;margin:18px 0;width:100%;font-size:18px;font-weight:900;cursor:pointer;box-shadow:0 8px 18px #173f3433;transition:transform .2s}.serial-tease:hover{transform:translateY(-3px) rotate(-1deg)}.serial-definition{background:#173f34;color:#fff;border-radius:18px;padding:18px 20px;margin:16px 0;line-height:1.65;font-size:16px}.serial-definition b{color:#ffd079;font-size:20px}.about-photo{width:100%;max-height:245px;object-fit:cover;border-radius:18px;margin:20px 0 6px;box-shadow:0 8px 20px #173f3422}.level-line{position:relative;margin:22px 0 8px;padding-left:42px}.level-line:before{content:'';position:absolute;left:16px;top:10px;bottom:10px;width:4px;background:#c9dfcc;border-radius:4px}.level{position:relative;padding:11px 0 15px}.level:before{content:'';position:absolute;left:-33px;top:14px;width:14px;height:14px;border-radius:50%;background:#c9dfcc;border:4px solid #fffaf2;box-shadow:0 0 0 2px #c9dfcc}.level.active:before{background:#f47645;box-shadow:0 0 0 2px #f47645}.level b{display:block}.level span{font-size:12px;color:#688077}.level.active b{color:#e86f40}.mypage-intro{background:#e7f2e6;border-radius:14px;padding:13px;margin:12px 0;font-size:13px}.reward{max-width:430px;text-align:center}.reward-ticket{margin:18px 0;background:linear-gradient(135deg,#173f34,#2d6b5b);color:#fff;border-radius:18px;padding:24px}.reward-ticket strong{display:block;font-size:40px;color:#ffd079;margin:8px 0}.reward-ticket small{color:#d9eee0}
+</style>
+<style>
+.card{position:relative;overflow:hidden;transition:transform .2s,box-shadow .2s}.card:hover{transform:translateY(-5px);box-shadow:0 12px 24px #173f3420}.day-card:after{content:'☀️';position:absolute;right:16px;top:14px;font-size:30px;opacity:.75}.night-card{color:#fff}.night-card p{color:#eef7fb}.night-card small{color:#fff0b8}.night-card:after{content:'✦ ✦';position:absolute;right:16px;top:17px;letter-spacing:4px;color:#fff0b8}.night-card h3{position:relative;z-index:1}.cereal-icon{width:34px;height:34px;object-fit:cover;border-radius:10px;vertical-align:middle;margin-left:7px;border:2px solid #fff;box-shadow:0 3px 8px #173f3422}.night-card .cereal-icon{border-color:#d6e9ef}.tone-0{background:linear-gradient(145deg,#fff7c9,#ffe3a3);border-color:#f2cf72}.tone-0 small{color:#b26b12}.tone-0 .btn{background:#e99128}.tone-1{background:linear-gradient(145deg,#173c59,#2e6f88);border-color:#2e6f88}.tone-1 .btn{background:#ffbf5b;color:#173f34}.tone-2{background:linear-gradient(145deg,#ffe5ed,#ffd0df);border-color:#f2a9bf}.tone-2 small{color:#b84c72}.tone-2 .btn{background:#df5e8b}.tone-3{background:linear-gradient(145deg,#34224d,#654b86);border-color:#654b86}.tone-3 .btn{background:#f4a7cf;color:#402447}.tone-4{background:linear-gradient(145deg,#e5faed,#bfefd1);border-color:#9cddb6}.tone-4 small{color:#258457}.tone-4 .btn{background:#38a875}.tone-5{background:linear-gradient(145deg,#193f49,#286b73);border-color:#286b73}.tone-5 .btn{background:#8de2d1;color:#124044}.tone-6{background:linear-gradient(145deg,#f0e8ff,#dbcbff);border-color:#c1a9ec}.tone-6 small{color:#7651b7}.tone-6 .btn{background:#8a62ce}.tone-7{background:linear-gradient(145deg,#292754,#56539a);border-color:#56539a}.tone-7 .btn{background:#bdb8ff;color:#302d68}.tone-8{background:linear-gradient(145deg,#e4f7ff,#c7eafa);border-color:#a6d8eb}.tone-8 small{color:#277997}.tone-8 .btn{background:#3c9fc0}.tone-9{background:linear-gradient(145deg,#1a4053,#31577a);border-color:#31577a}.tone-9 .btn{background:#91d3ed;color:#173f54}.tone-10{background:linear-gradient(145deg,#fff0dd,#ffd6aa);border-color:#f1bd7d}.tone-10 small{color:#ad6624}.tone-10 .btn{background:#df7c35}.tone-11{background:linear-gradient(145deg,#4b2a31,#85505c);border-color:#85505c}.tone-11 .btn{background:#f6b4a9;color:#602c39}.tone-12{background:linear-gradient(145deg,#eaf7d2,#d1ecac);border-color:#b7d987}.tone-12 small{color:#698d26}.tone-12 .btn{background:#84ae3b}.tone-13{background:linear-gradient(145deg,#163d37,#2c7263);border-color:#2c7263}.tone-13 .btn{background:#9ee5bd;color:#17473c}
+</style>
+</head>
+<body>
+<nav class="nav"><div class="brand">✦ 씨리얼</div><div class="nav-right"><span class="mini">매주 2회 · 1시간</span><button class="btn ghost" id="mypageBtn">마이페이지</button><img class="character" src="serial-character.png" alt="씨리얼 캐릭터"></div></nav>
+<section class="hero"><p>이번 주 활동</p><div class="activity-time"><strong>수 · 목</strong><span>낮 2–3시 · 저녁 7–8시</span></div><p class="hero-message">같이 걸으며 부산 바다 갓생, 제대로 챙겨보자! 🌊</p></section>
+<section class="section"><h2>모임 신청</h2><p class="muted">부산 7개 해수욕장에서 낮·저녁 1시간 활동을 선택하세요.</p><div class="grid" id="meetupGrid"></div></section>
+<section class="schedule"><b>모임 요일 순환</b><br>월·화 → 화·수 → 수·목 → 목·금 → 금·토 → 토·일 → 일·월 → 반복</section>
+
+<div class="overlay open" id="eventModal"><div class="modal event"><button class="x" data-close="eventModal" aria-label="닫기">×</button><div class="event-badge">🎉 씨리얼 이벤트</div><h2>5번 함께 걸으면<br>지역 음식점 할인권!</h2><button class="serial-tease" id="aboutSerial">씨리얼, 대체 뭐야? 👀<br><small>누르면 씨리얼의 비밀을 알려줄게!</small></button><div class="stamps"><div class="stamp">가자!</div><div class="stamp">최고!</div><div class="stamp">멋져!</div><div class="stamp">거의!</div><div class="stamp">성공!</div></div><p class="muted">참여 인증 확인 후 스탬프가 적립되고, 5개 달성 뒤 할인권이 지급돼요.</p><button class="btn" data-close="eventModal">홈에서 모임 보기</button></div></div>
+
+<div class="overlay" id="voteModal"><div class="modal"><button class="x" data-close="voteModal">×</button><p class="muted">참가 신청 완료!</p><h2>대표자 투표 🗳️</h2><div class="guide-tip">1. 모임 참가 신청 완료<br>2. 참가자 수와 이름 입력<br>3. 대표자 1명 투표</div><p>이번 활동을 함께할 사람들의 정보를 적고, 대표자를 뽑아줘!</p><div class="vote-setup"><label for="voteParticipantCount">참가자 수</label><input id="voteParticipantCount" type="number" min="2" max="8" value="3"><label for="voteParticipantNames">참가자 이름</label><textarea id="voteParticipantNames" placeholder="이름을 쉼표 또는 줄바꿈으로 나눠 적어줘&#10;예: 지민, 민수, 서연"></textarea><button class="btn" id="voteMakeCandidates" style="width:100%;margin-top:12px">투표 후보 만들기</button></div><div class="vote-list" id="voteCandidates"></div><button class="btn secondary" id="voteFinish" style="width:100%;margin-top:12px;display:none">투표 완료 · 인증 방법 보기</button></div></div>
+<div class="overlay" id="flowModal"><div class="modal"><button class="x" data-close="flowModal">×</button><p class="muted">씨리얼 인증 안내</p><div class="guide-warning">👀 안 보고 닫으면 혜택 놓칠 수도 있어요!</div><h2 id="flowTitle">인증 방법</h2><div class="guide-card" id="guideCard"></div><div class="guide-nav"><button class="btn ghost" id="guidePrev">이전</button><span class="guide-page" id="guidePage">1 / 4</span><button class="btn" id="guideNext">다음</button></div><button id="openCamera" hidden type="button"></button></div></div>
+
+<div class="overlay" id="activityModal"><div class="modal"><button class="x" data-close="activityModal">×</button><h2 id="activityTitle">활동 인증</h2><div class="notice">GPS는 <b>HTTPS 주소 또는 localhost</b>에서 권한을 허용해야 해요. 파일로 열었을 때 권한창이 안 뜨면 <b>씨리얼_카메라실행.bat</b>을 더블클릭해줘.</div><video class="camera" id="camera" autoplay playsinline></video><p id="cameraMessage">카메라 인증은 선택이에요. GPS 활동을 시작하려면 아래 버튼을 눌러주세요.</p><div class="actions"><button class="btn" id="startCamera">카메라 켜기 (선택)</button><button class="btn secondary" id="completeStart">GPS 활동 시작하기</button><button class="btn secondary" id="completeEnd">종료 인증</button><button class="btn ghost" id="cancelActivity">긴급 취소</button></div><div class="stats"><div class="stat"><b id="elapsed">00:00</b>운동 시간</div><div class="stat"><b id="distance">0.0km</b>이동 거리</div><div class="stat"><b id="calories">0kcal</b>예상 열량</div></div><p class="gps-status" id="gpsStatus">📍 GPS 활동 시작을 누르면 실제 이동거리를 기록해요.</p><button class="btn ghost" id="confirmParticipation" style="width:100%;margin-top:14px">실제로 참여했습니다</button></div></div>
+
+<div class="overlay" id="mypageModal"><div class="modal"><button class="x" data-close="mypageModal">×</button><p class="muted">MY CEREAL</p><h2>내 바다 갓생 현황 🌊</h2><div class="mypage-intro">지금은 <b>초보자</b> 단계야! 첫 활동을 완료하면 바다 새싹으로 레벨업해 ✨</div><div class="level-line"><div class="level active"><b>🐣 초보자</b><span>첫 걸음을 준비 중이에요</span></div><div class="level"><b>🌱 바다 새싹</b><span>스탬프 1개 달성</span></div><div class="level"><b>🧤 씨리얼 지킴이</b><span>스탬프 3개 달성</span></div><div class="level"><b>🦸 바다 히어로</b><span>스탬프 5개 달성</span></div></div><div class="stats"><div class="stat"><b id="stampCount">0/5</b>스탬프 현황</div><div class="stat"><b id="couponCount">0장</b>할인권</div><div class="stat"><b id="pointCount">0P</b>포인트</div></div><h3>할인권 적용 가능 가게</h3><div class="shop"><span>🌊 광안리 바다식당</span><b>10%</b></div><div class="shop"><span>🍜 해운대 파도국수</span><b>10%</b></div><div class="shop"><span>🍱 송정 모래밭식당</span><b>10%</b></div></div></div>
+<div class="overlay" id="rewardModal"><div class="modal reward"><button class="x" data-close="rewardModal">×</button><p>🎉 참여 인증 완료!</p><h2>스탬프가 적립됐어요</h2><div class="reward-ticket"><small>씨리얼 참여 혜택</small><strong>쿠폰 지급 완료</strong><span>지역 음식점 할인권을 마이페이지에서 확인해봐요!</span></div><button class="btn" data-close="rewardModal">확인</button></div></div>
+<div class="overlay" id="cancelModal"><div class="modal reward"><button class="x" data-close="cancelModal">×</button><p>🥺 앗, 아쉽다!</p><h2>이번 활동은 취소됐어요</h2><div class="reward-ticket"><small>다음 기회에 다시 만나자</small><strong>스탬프 적립 안 됨</strong><span>안전이 제일이야. 다음 활동에서 바다 갓생 챙겨보자!</span></div><button class="btn" data-close="cancelModal">확인했어</button></div></div>
+<div class="overlay" id="aboutModal"><div class="modal"><button class="x" data-close="aboutModal">×</button><p class="muted">ABOUT 씨리얼</p><h2>씨리얼이란? 🌊</h2><div class="serial-definition"><b>Sea + Real = 씨리얼</b><br>바다 문제를 진짜 행동으로 해결해가는<br>우리의 플로깅 커뮤니티야!</div><p class="hero-message">한 걸음씩 모여 부산 바다를 더 반짝이게 만들자!</p><img class="about-photo" src="serial-about.png" alt="씨리얼 소개 캐릭터"></div></div>
+<div class="toast" id="toast"></div>
+
+<script>
+const beaches=['해운대 해수욕장','광안리 해수욕장','송정 해수욕장','송도 해수욕장','다대포 해수욕장','일광 해수욕장','임랑 해수욕장'];
+const sessions=[['낮 모임','오후 2시–3시'],['저녁 모임','오후 7시–8시']];
+const grid=document.getElementById('meetupGrid');
+let selected='',stream=null,startAt=0,timer=null,geoWatchId=null,lastPosition=null,totalMeters=0,stamps=0,points=0,activityRewarded=false,endVerified=false;
+
+const cerealIcons=['cereal-sun.png','cereal-blue.png','cereal-night.png','cereal-crispy.png','cereal-rainbow.png','cereal-joy.png','cereal-moon.png','cereal-lion.png','cereal-friends.png'];
+grid.innerHTML=beaches.flatMap((beach,index)=>sessions.map((session,sessionIndex)=>{const isDay=session[0] === '낮 모임';const image=cerealIcons[index%cerealIcons.length];const tone=index*2+sessionIndex;return `<article class="card ${isDay ? 'day-card' : 'night-card'} tone-${tone}"><small>${session[0]}</small><h3>${isDay ? '🌞 ' : '🌙 '}${beach}<img class="cereal-icon" src="${image}" alt="씨리얼 스티커"></h3><p>🕒 ${session[1]} · 1시간</p><p>📍 부산 ${beach}</p><button class="btn join" data-beach="${beach}" data-time="${session[1]}">참가 신청</button></article>`})).join('');
+
+function openModal(id){document.getElementById(id).classList.add('open');window.scrollTo(0,0)}
+function closeModal(id){document.getElementById(id).classList.remove('open');window.scrollTo(0,0)}
+function toast(text){const el=document.getElementById('toast');el.textContent=text;el.style.display='block';setTimeout(()=>el.style.display='none',2600)}
+function resetActivity(){
+  if(stream){stream.getTracks().forEach(track=>track.stop());stream=null}
+  stopLocationTracking();lastPosition=null;totalMeters=0;clearInterval(timer);timer=null;startAt=0;activityRewarded=false;endVerified=false;document.getElementById('confirmParticipation').disabled=false;
+  const camera=document.getElementById('camera');camera.srcObject=null;camera.style.display='block';
+  document.getElementById('elapsed').textContent='00:00';
+  document.getElementById('distance').textContent='0.0km';
+  document.getElementById('calories').textContent='0kcal';
+  document.getElementById('gpsStatus').textContent='📍 GPS 활동 시작을 누르면 실제 이동거리를 기록해요.';
+  document.getElementById('cameraMessage').textContent='카메라 인증은 선택이에요. GPS 활동을 시작하려면 아래 버튼을 눌러주세요.';
+  const startButton=document.getElementById('startCamera');startButton.disabled=false;startButton.textContent='카메라 켜기 (선택)';
+}
+
+function stopLocationTracking(){if(geoWatchId!==null){navigator.geolocation?.clearWatch(geoWatchId);geoWatchId=null}}
+function setGpsStatus(text){document.getElementById('gpsStatus').textContent=text}
+function haversineMeters(from,to){const rad=value=>value*Math.PI/180;const earth=6371000;const dLat=rad(to.latitude-from.latitude);const dLng=rad(to.longitude-from.longitude);const a=Math.sin(dLat/2)**2+Math.cos(rad(from.latitude))*Math.cos(rad(to.latitude))*Math.sin(dLng/2)**2;return 2*earth*Math.asin(Math.sqrt(a))}
+function updateActivityMetrics(){const km=totalMeters/1000;document.getElementById('distance').textContent=`${km.toFixed(2)}km`;document.getElementById('calories').textContent=`${Math.round(km*50)}kcal`}
+function startLocationTracking(){
+  if(!navigator.geolocation){setGpsStatus('📍 이 기기에서는 GPS를 사용할 수 없어요.');return}
+  if(!window.isSecureContext){setGpsStatus('📍 HTTPS 주소에서 GPS를 사용할 수 있어요.');return}
+  setGpsStatus('📍 GPS 연결 중… 위치 권한을 허용해주세요.');
+  geoWatchId=navigator.geolocation.watchPosition(position=>{
+    const current={latitude:position.coords.latitude,longitude:position.coords.longitude};const accuracy=position.coords.accuracy;
+    if(!Number.isFinite(current.latitude)||!Number.isFinite(current.longitude)||accuracy>100){setGpsStatus('📍 GPS 정확도를 높이는 중이에요. 잠시만 기다려주세요.');return}
+    if(lastPosition){const segment=haversineMeters(lastPosition,current);if(segment>=3&&segment<=150){totalMeters+=segment;updateActivityMetrics()}}
+    lastPosition=current;setGpsStatus(`📍 GPS 기록 중 · 정확도 ±${Math.round(accuracy)}m`);
+  },error=>{
+    const message=error.code===1?'GPS 권한이 필요해요. 브라우저 설정에서 위치를 허용해주세요.':error.code===2?'현재 위치를 찾지 못했어요. 야외에서 다시 시도해주세요.':'GPS 연결 시간이 초과됐어요. 다시 시도해주세요.';
+    setGpsStatus(`📍 ${message}`);if(error.code===1)stopLocationTracking();
+  },{enableHighAccuracy:true,maximumAge:3000,timeout:15000});
+}
+
+document.querySelectorAll('[data-close]').forEach(button=>button.addEventListener('click',()=>closeModal(button.dataset.close)));
+document.querySelectorAll('.overlay').forEach(overlay=>overlay.addEventListener('click',event=>{if(event.target===overlay)closeModal(overlay.id)}));
+document.querySelectorAll('.join').forEach(button=>button.addEventListener('click',()=>{resetActivity();selected=button.dataset.beach;votedRepresentative='';document.getElementById('voteCandidates').innerHTML='';document.getElementById('voteFinish').style.display='none';document.getElementById('flowTitle').textContent=`${selected} · ${button.dataset.time}`;openModal('voteModal')}));
+document.getElementById('openCamera').addEventListener('click',()=>{closeModal('flowModal');document.getElementById('activityTitle').textContent=`${selected} 활동 인증`;openModal('activityModal')});
+document.getElementById('mypageBtn').addEventListener('click',()=>openModal('mypageModal'));
+document.getElementById('aboutSerial').addEventListener('click',()=>openModal('aboutModal'));
+let votedRepresentative='';
+document.getElementById('voteMakeCandidates').addEventListener('click',()=>{
+  const count=Number(document.getElementById('voteParticipantCount').value);
+  const names=document.getElementById('voteParticipantNames').value.split(/[\n,]/).map(name=>name.trim()).filter(Boolean);
+  if(count<2||count>8){toast('참가자 수는 2명에서 8명 사이로 적어줘!');return}
+  if(names.length!==count){toast(`참가자 수 ${count}명에 맞춰 이름도 ${count}명 적어줘!`);return}
+  const candidates=document.getElementById('voteCandidates');
+  candidates.innerHTML=names.map(name=>`<button class="vote-option" data-name="${name}">🗳️ ${name}님에게 투표</button>`).join('');
+  candidates.querySelectorAll('.vote-option').forEach(button=>button.addEventListener('click',()=>{
+    candidates.querySelectorAll('.vote-option').forEach(item=>item.classList.remove('selected'));
+    button.classList.add('selected');
+    votedRepresentative=button.dataset.name;
+    document.getElementById('voteFinish').style.display='block';
+  }));
+});
+document.getElementById('voteFinish').addEventListener('click',()=>{
+  if(!votedRepresentative){toast('대표자 후보 한 명을 골라줘!');return}
+  closeModal('voteModal');
+  document.getElementById('flowTitle').textContent=`${selected} 인증 방법`;
+  openModal('flowModal');
+  toast(`${votedRepresentative}님이 대표자로 선택됐어요!`);
+});
+
+document.getElementById('startCamera').addEventListener('click',async()=>{const button=document.getElementById('startCamera');button.disabled=true;button.textContent='카메라 연결 중...';try{if(!navigator.mediaDevices?.getUserMedia)throw new Error('secure');stream=await navigator.mediaDevices.getUserMedia({video:true,audio:false});const camera=document.getElementById('camera');camera.style.display='block';camera.srcObject=stream;await camera.play();document.getElementById('cameraMessage').textContent='카메라가 켜졌어요. 준비가 되면 GPS 활동 시작하기를 눌러주세요.';button.textContent='카메라 연결 완료'}catch(error){button.disabled=false;button.textContent='카메라 켜기 (선택)';document.getElementById('cameraMessage').textContent='카메라를 열 수 없어요. 그래도 GPS 활동 시작하기는 사용할 수 있어요.'}});
+
+document.getElementById('completeStart').addEventListener('click',()=>{if(startAt){toast('이미 GPS 활동을 기록 중이에요!');return}if(stream){stream.getTracks().forEach(track=>track.stop());stream=null}document.getElementById('camera').srcObject=null;document.getElementById('camera').style.display='none';startAt=Date.now();clearInterval(timer);timer=setInterval(updateStats,500);startLocationTracking();document.getElementById('cameraMessage').textContent='GPS 활동을 시작했어요! 위치 권한을 허용하면 실제 이동거리가 기록돼요.';toast('GPS 활동 기록을 시작했어요.')});
+function updateStats(){if(!startAt)return;const sec=Math.floor((Date.now()-startAt)/1000);document.getElementById('elapsed').textContent=`${String(Math.floor(sec/60)).padStart(2,'0')}:${String(sec%60).padStart(2,'0')}`;updateActivityMetrics()}
+document.getElementById('completeEnd').addEventListener('click',()=>{if(!startAt){toast('먼저 시작 인증을 완료해주세요.');return}const sec=(Date.now()-startAt)/1000;if(sec<3600){toast(`목표 1시간을 채워야 적립돼요. 현재 ${Math.floor(sec/60)}분`);return}clearInterval(timer);stopLocationTracking();endVerified=true;setGpsStatus(`📍 GPS 기록 완료 · 실제 이동거리 ${document.getElementById('distance').textContent}`);document.getElementById('cameraMessage').textContent='종료 인증 완료. 마지막 참여 확인을 눌러주세요.';toast('종료 인증이 완료됐어요.')});
+document.getElementById('confirmParticipation').addEventListener('click',()=>{if(!startAt||!endVerified){toast('시작 인증과 종료 인증을 모두 완료한 뒤 받을 수 있어!');return}if(activityRewarded){toast('이번 활동의 스탬프는 이미 적립됐어! 😊');return}activityRewarded=true;document.getElementById('confirmParticipation').disabled=true;stamps=Math.min(5,stamps+1);points+=100;document.getElementById('stampCount').textContent=`${stamps}/5`;document.getElementById('pointCount').textContent=`${points}P`;if(stamps===5)document.getElementById('couponCount').textContent='1장';toast(`스탬프 적립 완료! 현재 ${stamps}/5`)});
+
+document.getElementById('cancelActivity').addEventListener('click',()=>{
+  resetActivity();
+  closeModal('activityModal');
+  openModal('cancelModal');
+});
+
+for(let i=0;i<28;i++){const el=document.createElement('span');el.className='confetti';el.textContent=['🎉','✨','🎊','⭐'][i%4];el.style.left=`${Math.random()*98}%`;el.style.animationDelay=`${Math.random()}s`;document.body.appendChild(el);setTimeout(()=>el.remove(),4200)}
+</script>
+<script>
+(() => {
+  const cards = [
+    { icon: '📸', title: '시작 단체사진', text: '대표자가 단체사진을 찍고, 실제 인원수와 신청자 수를 비교해요.' },
+    { icon: '⏱️', title: '타이머 시작', text: '대표자가 타이머를 시작해요. 타이머가 작동하는 동안에는 중간 사진을 찍을 수 없어요.', tip: '노쇼와 활동 중 이탈을 막기 위한 단계예요!' },
+    { icon: '🧹', title: '종료 인증', text: '정해진 시간이 지나면 대표자가 종료 출석, 종료 단체사진, 쓰레기봉투 사진을 등록해요.' },
+    { icon: '✅', title: '마지막 참여 확인', text: '참가자가 “실제로 참여했습니다”를 누르면 인증이 완료돼요.' }
+  ];
+  let guideIndex = 0;
+  let hasVoted = false;
+  let candidateNames = [];
+  const card = document.getElementById('guideCard');
+  const page = document.getElementById('guidePage');
+  const prev = document.getElementById('guidePrev');
+  const next = document.getElementById('guideNext');
+  function renderGuide() {
+    const item = cards[guideIndex];
+    const voteMarkup = '';
+    card.innerHTML = `<div class="guide-emoji">${item.icon}</div><h3>${guideIndex + 1}. ${item.title}</h3><p>${item.text}</p>${item.tip ? `<div class="guide-tip">${item.tip}</div>` : ''}${voteMarkup}`;
+    const makeCandidates = card.querySelector('#makeCandidates');
+    if (makeCandidates) makeCandidates.addEventListener('click', () => {
+      const count = Number(card.querySelector('#participantCount').value);
+      const names = card.querySelector('#participantNames').value.split(/[\n,]/).map(name => name.trim()).filter(Boolean);
+      if (count < 2 || count > 8) { toast('참가자 수는 2명에서 8명 사이로 적어줘!'); return; }
+      if (names.length !== count) { toast(`참가자 수 ${count}명에 맞춰 이름도 ${count}명 적어줘!`); return; }
+      candidateNames = names; hasVoted = false; renderGuide();
+    });
+    card.querySelectorAll('.vote-option').forEach(option => option.addEventListener('click', () => {
+      hasVoted = true;
+      card.querySelectorAll('.vote-option').forEach(button => button.classList.remove('selected'));
+      option.classList.add('selected');
+      toast(`${option.dataset.candidate}님에게 투표했어요!`);
+    }));
+    page.textContent = `${guideIndex + 1} / ${cards.length}`;
+    prev.disabled = guideIndex === 0;
+    prev.style.opacity = guideIndex === 0 ? '.45' : '1';
+    next.textContent = guideIndex === cards.length - 1 ? '활동 인증 시작' : '다음';
+  }
+  prev.addEventListener('click', () => { if (guideIndex > 0) { guideIndex--; renderGuide(); } });
+  next.addEventListener('click', () => {
+    if (guideIndex < cards.length - 1) { guideIndex++; renderGuide(); return; }
+    document.getElementById('flowModal').classList.remove('open');
+    document.getElementById('activityModal').classList.add('open');
+  });
+  document.querySelectorAll('.join').forEach(button => button.addEventListener('click', () => { guideIndex = 0; hasVoted = false; candidateNames = []; renderGuide(); }));
+  renderGuide();
+
+  let ended = false;
+  document.getElementById('completeEnd').addEventListener('click', () => {
+    const minutes = Number((document.getElementById('elapsed').textContent || '00:00').split(':')[0]);
+    if (minutes >= 60) ended = true;
+  });
+  document.getElementById('confirmParticipation').addEventListener('click', () => {
+    if (!ended) return;
+    document.getElementById('rewardModal').classList.add('open');
+  });
+})();
+</script>
+<style>
+.sad-drop{position:fixed;top:-35px;z-index:35;pointer-events:none;animation:sadFall 2.8s ease-in forwards}@keyframes sadFall{to{transform:translateY(108vh) rotate(300deg);opacity:0}}#cancelModal .reward-ticket{background:linear-gradient(135deg,#526c7e,#8ca4b4)}#cancelModal .reward-ticket strong{color:#ffe5a7}
+</style>
+<script>
+document.getElementById('confirmParticipation').textContent='나, 진짜 참여했어! 🌊';
+const cancelBox=document.querySelector('#cancelModal .reward-ticket');
+if(cancelBox){cancelBox.innerHTML='<small>다음에는 꼭 끝까지 같이하자!</small><strong>스탬프 적립 안 됨</strong><span>이번엔 아쉽지만, 다음 활동에서는 끝까지 함께해줘 🥺</span>'}
+document.getElementById('cancelActivity').addEventListener('click',()=>{['🥺','😭','💧','🥹','☔'].forEach((icon,index)=>{for(let n=0;n<5;n++){const drop=document.createElement('span');drop.className='sad-drop';drop.textContent=icon;drop.style.left=(5+Math.random()*90)+'%';drop.style.fontSize=(20+Math.random()*18)+'px';drop.style.animationDelay=(index*.08+Math.random()*.7)+'s';document.body.appendChild(drop);setTimeout(()=>drop.remove(),3500)}})});
+</script>
+</body>
+</html>
